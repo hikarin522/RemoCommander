@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- Home page -->
+  <data name="Home.Title" xml:space="preserve">
+    <value>RemoCommander</value>
+  </data>
+  <data name="Home.Welcome" xml:space="preserve">
+    <value>Web から Nature Remo の家電を操作できます</value>
+  </data>
+  <data name="Home.GetStarted" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="Home.GetStartedText" xml:space="preserve">
+    <value>ナビゲーションメニューの</value>
+  </data>
+  <data name="Home.Appliances" xml:space="preserve">
+    <value>家電</value>
+  </data>
+  <data name="Home.ClickText" xml:space="preserve">
+    <value>をクリックしてデバイスを操作してください。</value>
+  </data>
+  <data name="Home.GoToAppliances" xml:space="preserve">
+    <value>家電ページへ</value>
+  </data>
+  <data name="Home.GetToken" xml:space="preserve">
+    <value>Nature Remo のトークンを取得</value>
+  </data>
+  <data name="Home.Features" xml:space="preserve">
+    <value>機能</value>
+  </data>
+  <data name="Home.Feature1" xml:space="preserve">
+    <value>すべての Nature Remo 家電を操作</value>
+  </data>
+  <data name="Home.Feature2" xml:space="preserve">
+    <value>トークンはブラウザの localStorage に安全に保存</value>
+  </data>
+  <data name="Home.Feature3" xml:space="preserve">
+    <value>完全にブラウザ内で動作 - サーバー不要</value>
+  </data>
+  <data name="Home.Feature4" xml:space="preserve">
+    <value>Remo デバイスごとにグループ化</value>
+  </data>
+  <!-- Nav menu -->
+  <data name="Nav.Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="Nav.Appliances" xml:space="preserve">
+    <value>家電</value>
+  </data>
+  <!-- Appliances page -->
+  <data name="Appliances.Title" xml:space="preserve">
+    <value>家電</value>
+  </data>
+  <data name="Appliances.Header" xml:space="preserve">
+    <value>🏠 Nature Remo 家電</value>
+  </data>
+  <data name="Appliances.SetupRequired" xml:space="preserve">
+    <value>初期設定</value>
+  </data>
+  <data name="Appliances.EnterToken" xml:space="preserve">
+    <value>Nature Remo のアクセストークンを入力してください。</value>
+  </data>
+  <data name="Appliances.AccessToken" xml:space="preserve">
+    <value>アクセストークン:</value>
+  </data>
+  <data name="Appliances.TokenPlaceholder" xml:space="preserve">
+    <value>トークンを入力</value>
+  </data>
+  <data name="Appliances.Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Appliances.Loading" xml:space="preserve">
+    <value>家電を読み込み中...</value>
+  </data>
+  <data name="Appliances.Error" xml:space="preserve">
+    <value>エラー:</value>
+  </data>
+  <data name="Appliances.ClearToken" xml:space="preserve">
+    <value>トークンをクリア</value>
+  </data>
+  <data name="Appliances.Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Appliances.NoSignals" xml:space="preserve">
+    <value>信号が登録されていません</value>
+  </data>
+  <data name="Appliances.SignalSent" xml:space="preserve">
+    <value>✅ 信号を送信しました:</value>
+  </data>
+  <data name="Appliances.SignalFailed" xml:space="preserve">
+    <value>信号の送信に失敗しました</value>
+  </data>
+  <data name="Appliances.LoadFailed" xml:space="preserve">
+    <value>家電の取得に失敗しました。トークンを確認してください。</value>
+  </data>
+  <!-- Sensor types -->
+  <data name="Sensor.Temperature" xml:space="preserve">
+    <value>🌡️ 温度</value>
+  </data>
+  <data name="Sensor.Humidity" xml:space="preserve">
+    <value>💧 湿度</value>
+  </data>
+  <data name="Sensor.Illumination" xml:space="preserve">
+    <value>💡 照度</value>
+  </data>
+  <data name="Sensor.Motion" xml:space="preserve">
+    <value>🚶 人感</value>
+  </data>
+  <!-- Air conditioner controls -->
+  <data name="AirCon.Temperature" xml:space="preserve">
+    <value>温度:</value>
+  </data>
+  <data name="AirCon.Mode" xml:space="preserve">
+    <value>モード:</value>
+  </data>
+  <data name="AirCon.TurnedOff" xml:space="preserve">
+    <value>✅ エアコン ({0}) をOFFにしました</value>
+  </data>
+  <data name="AirCon.SettingsUpdated" xml:space="preserve">
+    <value>✅ エアコン ({0}): {1}°C, {2}</value>
+  </data>
+  <!-- Light and TV controls -->
+  <data name="Light.ButtonPressed" xml:space="preserve">
+    <value>✅ ライト: {0}</value>
+  </data>
+  <data name="TV.ButtonPressed" xml:space="preserve">
+    <value>✅ TV: {0}</value>
+  </data>
+  <!-- Additional Home page -->
+  <data name="Home.TokenConfigured" xml:space="preserve">
+    <value>✅ トークンが設定されています。</value>
+  </data>
+  <!-- Additional Air conditioner controls -->
+  <data name="AirCon.PowerOn" xml:space="preserve">
+    <value>オン</value>
+  </data>
+  <data name="AirCon.PowerOff" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="AirCon.TempDown" xml:space="preserve">
+    <value>-1°C</value>
+  </data>
+  <data name="AirCon.TempUp" xml:space="preserve">
+    <value>+1°C</value>
+  </data>
+  <!-- Additional Appliances page -->
+  <data name="Appliances.NetworkError" xml:space="preserve">
+    <value>ネットワークエラー:</value>
+  </data>
+  <!-- Not Found page -->
+  <data name="NotFound.Title" xml:space="preserve">
+    <value>見つかりません</value>
+  </data>
+  <data name="NotFound.Message" xml:space="preserve">
+    <value>お探しのコンテンツが存在しません。</value>
+  </data>
+  <!-- Additional Nav menu -->
+  <data name="Nav.MenuTitle" xml:space="preserve">
+    <value>ナビゲーションメニュー</value>
+  </data>
+  <!-- SESAME BOT controls -->
+  <data name="SesameBot.Click" xml:space="preserve">
+    <value>クリック</value>
+  </data>
+  <data name="SesameBot.Clicked" xml:space="preserve">
+    <value>✅ SESAME BOT ({0}) をクリックしました</value>
+  </data>
+  <!-- Router -->
+  <data name="Router.NotFoundTitle" xml:space="preserve">
+    <value>見つかりません</value>
+  </data>
+  <data name="Router.NotFoundMessage" xml:space="preserve">
+    <value>このアドレスには何もありません。</value>
+  </data>
+</root>

@@ -1,0 +1,177 @@
+@page "/appliances"
+@using RemoCommander.CloudApi
+@using Microsoft.Extensions.Localization
+
+<PageTitle>@L["Appliances.Title"]</PageTitle>
+
+<h1>@L["Appliances.Header"]</h1>
+
+@if (loading)
+{
+    <p><em>@L["Appliances.Loading"]</em></p>
+}
+else if (error != null)
+{
+    <div class="alert alert-danger">
+        <strong>@L["Appliances.Error"]</strong> @error
+    </div>
+}
+else if (appliances != null && devices != null)
+{
+    @foreach (var device in devices)
+    {
+        var deviceAppliances = appliances.Where(a => a.Device?.Id == device.Id);
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                @{
+                    var deviceType = DeviceHelpers.GetDeviceType(device.Firmware_version);
+                    var deviceIcon = deviceType switch
+                    {
+                        DeviceType.RemoE => "🔌",
+                        DeviceType.Remo or DeviceType.RemoMini or DeviceType.Remo3 => "🎛️",
+                        _ => "🏠"
+                    };
+                }
+                <h4>@deviceIcon @device.Name</h4>
+                <small>Id: @device.Id | @(device.Online == true ? "✅ Online" : "❌ Offline")</small>
+                @if (device.Newest_events != null && device.Newest_events.Count > 0)
+                {
+                    <div class="mt-2">
+                        @foreach (var (sensorKey, sensorValue) in device.Newest_events)
+                        {
+                            var sensorType = SensorHelpers.GetSensorType(sensorKey);
+                            var sensorName = sensorType switch
+                            {
+                                SensorType.Temperature => L["Sensor.Temperature"],
+                                SensorType.Humidity => L["Sensor.Humidity"],
+                                SensorType.Illumination => L["Sensor.Illumination"],
+                                SensorType.Motion => L["Sensor.Motion"],
+                                _ => sensorKey
+                            };
+                            var unit = SensorHelpers.GetSensorUnit(sensorType);
+                            <span class="badge bg-light text-dark me-2">@sensorName: @sensorValue.Val.ToString("F1")@unit</span>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="card-body">
+                @foreach (var appliance in deviceAppliances)
+                {
+                    <div class="mb-3">
+                        @{
+                            var applianceType = ApplianceHelpers.GetApplianceType(appliance.Type);
+                            var applianceIcon = applianceType switch
+                            {
+                                ApplianceType.AC => "❄️",
+                                ApplianceType.TV => "📺",
+                                ApplianceType.Light => "💡",
+                                ApplianceType.IR => "📱",
+                                ApplianceType.SesameBot => "🔘",
+                                _ => "❓"
+                            };
+                        }
+                        <h6>@applianceIcon @appliance.Nickname</h6>
+                        <small class="text-muted">Id: @appliance.Id | Type: @appliance.Type</small>
+
+                        @if (applianceType == ApplianceType.AC && appliance.Settings != null)
+                        {
+                            var defaultTemp = appliance.Settings.Temp ?? "26";
+                            var defaultMode = appliance.Settings.Mode ?? "cool";
+                            <div class="mt-2">
+                                <div class="mb-2">
+                                    <span class="badge bg-info me-2">@L["AirCon.Temperature"] @appliance.Settings.Temp°C</span>
+                                    <span class="badge bg-secondary me-2">@L["AirCon.Mode"] @appliance.Settings.Mode</span>
+                                </div>
+                                <div class="btn-group me-2 mb-2" role="group">
+                                    <button class="btn btn-sm btn-success"
+                                            @onclick="@(() => ControlAirConAsync(appliance.Id!, appliance.Nickname, defaultTemp, defaultMode, false))"
+                                            disabled="@sending">
+                                        @L["AirCon.PowerOn"]
+                                    </button>
+                                    <button class="btn btn-sm btn-danger"
+                                            @onclick="@(() => ControlAirConAsync(appliance.Id!, appliance.Nickname, defaultTemp, defaultMode, true))"
+                                            disabled="@sending">
+                                        @L["AirCon.PowerOff"]
+                                    </button>
+                                </div>
+                                <div class="btn-group me-2 mb-2" role="group">
+                                    <button class="btn btn-sm btn-outline-primary"
+                                            @onclick="@(() => AdjustTemperatureAsync(appliance.Id!, appliance.Nickname, appliance.Settings, -1))"
+                                            disabled="@sending">
+                                        @L["AirCon.TempDown"]
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary"
+                                            @onclick="@(() => AdjustTemperatureAsync(appliance.Id!, appliance.Nickname, appliance.Settings, 1))"
+                                            disabled="@sending">
+                                        @L["AirCon.TempUp"]
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                        else if (applianceType == ApplianceType.Light && appliance.Light?.Buttons != null)
+                        {
+                            <div class="mt-2">
+                                @foreach (var button in appliance.Light.Buttons)
+                                {
+                                    <button class="btn btn-sm btn-outline-primary me-1 mb-1"
+                                            @onclick="() => PressLightButtonAsync(appliance.Id!, button.Name, button.Label)"
+                                            disabled="@sending">
+                                        @button.Label
+                                    </button>
+                                }
+                            </div>
+                        }
+                        else if (applianceType == ApplianceType.TV && appliance.Tv?.Buttons != null)
+                        {
+                            <div class="mt-2">
+                                @foreach (var button in appliance.Tv.Buttons)
+                                {
+                                    <button class="btn btn-sm btn-outline-secondary me-1 mb-1"
+                                            @onclick="() => PressTvButtonAsync(appliance.Id!, button.Name, button.Label)"
+                                            disabled="@sending">
+                                        @button.Label
+                                    </button>
+                                }
+                            </div>
+                        }
+                        else if (applianceType == ApplianceType.SesameBot)
+                        {
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-primary"
+                                        @onclick="() => ClickSesameBotAsync(appliance.Id!, appliance.Nickname)"
+                                        disabled="@sending">
+                                    @L["SesameBot.Click"]
+                                </button>
+                            </div>
+                        }
+                        else if (appliance.Signals?.Any() == true)
+                        {
+                            <div class="mt-2">
+                                @foreach (var signal in appliance.Signals)
+                                {
+                                    <button class="btn btn-sm btn-outline-primary me-1 mb-1"
+                                            @onclick="() => SendSignalAsync(signal.Id, signal.Name)"
+                                            disabled="@sending">
+                                        @signal.Name
+                                    </button>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="text-muted small">@L["Appliances.NoSignals"]</p>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+
+@if (lastAction != null)
+{
+    <div class="alert alert-success mt-3">
+        @lastAction
+    </div>
+}

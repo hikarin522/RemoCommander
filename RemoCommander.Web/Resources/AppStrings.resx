@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- Home page -->
+  <data name="Home.Title" xml:space="preserve">
+    <value>RemoCommander</value>
+  </data>
+  <data name="Home.Welcome" xml:space="preserve">
+    <value>Control your Nature Remo appliances from the web!</value>
+  </data>
+  <data name="Home.GetStarted" xml:space="preserve">
+    <value>Get Started</value>
+  </data>
+  <data name="Home.GetStartedText" xml:space="preserve">
+    <value>Click on</value>
+  </data>
+  <data name="Home.Appliances" xml:space="preserve">
+    <value>Appliances</value>
+  </data>
+  <data name="Home.ClickText" xml:space="preserve">
+    <value>in the navigation menu to control your devices.</value>
+  </data>
+  <data name="Home.GoToAppliances" xml:space="preserve">
+    <value>Go to Appliances</value>
+  </data>
+  <data name="Home.GetToken" xml:space="preserve">
+    <value>Get Nature Remo Token</value>
+  </data>
+  <data name="Home.Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="Home.Feature1" xml:space="preserve">
+    <value>Control all your Nature Remo appliances</value>
+  </data>
+  <data name="Home.Feature2" xml:space="preserve">
+    <value>Token stored securely in browser localStorage</value>
+  </data>
+  <data name="Home.Feature3" xml:space="preserve">
+    <value>Works entirely in your browser - no server required</value>
+  </data>
+  <data name="Home.Feature4" xml:space="preserve">
+    <value>Grouping by Remo devices</value>
+  </data>
+  <!-- Nav menu -->
+  <data name="Nav.Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Nav.Appliances" xml:space="preserve">
+    <value>Appliances</value>
+  </data>
+  <!-- Appliances page -->
+  <data name="Appliances.Title" xml:space="preserve">
+    <value>Appliances</value>
+  </data>
+  <data name="Appliances.Header" xml:space="preserve">
+    <value>🏠 Nature Remo Appliances</value>
+  </data>
+  <data name="Appliances.SetupRequired" xml:space="preserve">
+    <value>Setup Required</value>
+  </data>
+  <data name="Appliances.EnterToken" xml:space="preserve">
+    <value>Please enter your Nature Remo access token to get started.</value>
+  </data>
+  <data name="Appliances.AccessToken" xml:space="preserve">
+    <value>Access Token:</value>
+  </data>
+  <data name="Appliances.TokenPlaceholder" xml:space="preserve">
+    <value>Enter your token</value>
+  </data>
+  <data name="Appliances.Save" xml:space="preserve">
+    <value>Save Token</value>
+  </data>
+  <data name="Appliances.Loading" xml:space="preserve">
+    <value>Loading appliances...</value>
+  </data>
+  <data name="Appliances.Error" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="Appliances.ClearToken" xml:space="preserve">
+    <value>Clear Token</value>
+  </data>
+  <data name="Appliances.Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Appliances.NoSignals" xml:space="preserve">
+    <value>No signals configured</value>
+  </data>
+  <data name="Appliances.SignalSent" xml:space="preserve">
+    <value>✅ Sent signal:</value>
+  </data>
+  <data name="Appliances.SignalFailed" xml:space="preserve">
+    <value>Failed to send signal</value>
+  </data>
+  <data name="Appliances.LoadFailed" xml:space="preserve">
+    <value>Failed to load appliances. Please check your token.</value>
+  </data>
+  <!-- Sensor types -->
+  <data name="Sensor.Temperature" xml:space="preserve">
+    <value>🌡️ Temperature</value>
+  </data>
+  <data name="Sensor.Humidity" xml:space="preserve">
+    <value>💧 Humidity</value>
+  </data>
+  <data name="Sensor.Illumination" xml:space="preserve">
+    <value>💡 Illumination</value>
+  </data>
+  <data name="Sensor.Motion" xml:space="preserve">
+    <value>🚶 Motion</value>
+  </data>
+  <!-- Air conditioner controls -->
+  <data name="AirCon.Temperature" xml:space="preserve">
+    <value>Temperature:</value>
+  </data>
+  <data name="AirCon.Mode" xml:space="preserve">
+    <value>Mode:</value>
+  </data>
+  <data name="AirCon.TurnedOff" xml:space="preserve">
+    <value>✅ Air conditioner ({0}) turned OFF</value>
+  </data>
+  <data name="AirCon.SettingsUpdated" xml:space="preserve">
+    <value>✅ Air conditioner ({0}): {1}°C, {2}</value>
+  </data>
+  <!-- Light and TV controls -->
+  <data name="Light.ButtonPressed" xml:space="preserve">
+    <value>✅ Light: {0}</value>
+  </data>
+  <data name="TV.ButtonPressed" xml:space="preserve">
+    <value>✅ TV: {0}</value>
+  </data>
+  <!-- Additional Home page -->
+  <data name="Home.TokenConfigured" xml:space="preserve">
+    <value>✅ Token is configured.</value>
+  </data>
+  <!-- Additional Air conditioner controls -->
+  <data name="AirCon.PowerOn" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="AirCon.PowerOff" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="AirCon.TempDown" xml:space="preserve">
+    <value>-1°C</value>
+  </data>
+  <data name="AirCon.TempUp" xml:space="preserve">
+    <value>+1°C</value>
+  </data>
+  <!-- Additional Appliances page -->
+  <data name="Appliances.NetworkError" xml:space="preserve">
+    <value>Network error:</value>
+  </data>
+  <!-- Not Found page -->
+  <data name="NotFound.Title" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="NotFound.Message" xml:space="preserve">
+    <value>Sorry, the content you are looking for does not exist.</value>
+  </data>
+  <!-- Additional Nav menu -->
+  <data name="Nav.MenuTitle" xml:space="preserve">
+    <value>Navigation menu</value>
+  </data>
+  <!-- SESAME BOT controls -->
+  <data name="SesameBot.Click" xml:space="preserve">
+    <value>Click</value>
+  </data>
+  <data name="SesameBot.Clicked" xml:space="preserve">
+    <value>✅ SESAME BOT ({0}) clicked</value>
+  </data>
+  <!-- Router -->
+  <data name="Router.NotFoundTitle" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="Router.NotFoundMessage" xml:space="preserve">
+    <value>Sorry, there's nothing at this address.</value>
+  </data>
+</root>

@@ -4,5 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseArtifactsOutput>true</UseArtifactsOutput>
+    <LangVersion>preview</LangVersion>
+    <UserSecretsId>09664676-3b5c-4a02-9582-ada3b575e0ab</UserSecretsId>
   </PropertyGroup>
 </Project>

@@ -1,6 +1,18 @@
 <Project>
   <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
-  <Target Name="CustomAfterBuildTarget" AfterTargets="Build">
-      <Message Text="Hello from CustomAfterBuildTarget" Importance="high" />
+
+  <!-- NSwag client generation -->
+  <Target Name="GenerateNSwagClient" BeforeTargets="BeforeCompile" Condition="Exists('$(MSBuildProjectDirectory)\nswag.json')">
+    <Exec Command="dotnet nswag run nswag.json"
+          WorkingDirectory="$(MSBuildProjectDirectory)"
+          Condition="!Exists('$(MSBuildProjectDirectory)\Generated')" />
+    <ItemGroup>
+      <Compile Include="Generated\*.cs" KeepDuplicates="False" />
+    </ItemGroup>
   </Target>
+
+  <Target Name="CleanNSwagClient" AfterTargets="Clean" Condition="Exists('$(MSBuildProjectDirectory)\nswag.json')">
+    <RemoveDir Directories="$(MSBuildProjectDirectory)\Generated" />
+  </Target>
+
 </Project>

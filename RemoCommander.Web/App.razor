@@ -1,0 +1,15 @@
+@inject IStringLocalizer<AppStrings> L
+@using Microsoft.Extensions.Localization
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>@L["Router.NotFoundTitle"]</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">@L["Router.NotFoundMessage"]</p>
+        </LayoutView>
+    </NotFound>
+</Router>

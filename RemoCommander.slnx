@@ -1,1 +1,6 @@
-<Solution />
+<Solution>
+  <Project Path="RemoCommander.Cli/RemoCommander.Cli.csproj" />
+  <Project Path="RemoCommander.CloudApi/RemoCommander.CloudApi.csproj" />
+  <Project Path="RemoCommander.LocalApi/RemoCommander.LocalApi.csproj" />
+  <Project Path="RemoCommander.Web/RemoCommander.Web.csproj" />
+</Solution>
